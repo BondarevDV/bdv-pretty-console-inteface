@@ -105,3 +105,10 @@ def example_progress():
             progress.update(task2, advance=0.3)
             progress.update(task3, advance=0.9)
             time.sleep(0.02)
+        
+def example_read_file():
+    from rich.syntax import Syntax
+    console = Console()
+    with open("example_formating.py", "r") as f:
+        syntax = Syntax(f.read(), "python", line_numbers=True)
+    console.print(syntax)
